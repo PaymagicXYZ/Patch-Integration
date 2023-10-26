@@ -12,9 +12,9 @@ export default async function Page() {
   );
   const issuer = "https://probable-marmot-67.clerk.accounts.dev";
   if (token) {
-    const { payload, protectedHeader } = await jose.jwtVerify(token, JWKS, {
-      issuer: issuer,
-    });
+    // const { payload, protectedHeader } = await jose.jwtVerify(token, JWKS, {
+    //   issuer: issuer,
+    // });
     return (
       <main className="m-4">
         <h1 className="text-xl">JWT Token for {userId}:</h1>
@@ -25,14 +25,14 @@ export default async function Page() {
         >
           {token}
         </div>
-        <h1 className="text-xl">Decoded JWT Token:</h1>
+        {/* <h1 className="text-xl">Decoded JWT Token:</h1>
         <div className="w-full bg-gray-100 p-4 rounded-md">
           <pre>{JSON.stringify(payload, null, 2)}</pre>
         </div>
         <h1 className="text-xl">Protected Header:</h1>
         <div className="w-full bg-gray-100 p-4 rounded-md">
           <pre>{JSON.stringify(protectedHeader, null, 2)}</pre>
-        </div>
+        </div> */}
         <Link href="/user">Check User Object</Link>
         <br />
         <Link href="/">Back to Home</Link>
